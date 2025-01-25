@@ -1,0 +1,19 @@
+---
+import Hamburger from './Hamburger.astro';
+import Navigation from './Navigation.astro';
+---
+<header>
+    <nav>
+        <Hamburger />
+        <Navigation />
+    </nav>
+</header>
+
+<script type="module">
+    document.getElementById('menu-toggle')?.addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks) {
+        navLinks.classList.toggle('expanded'); // Alterna la clase 'expanded' al hacer clic
+      }
+    });
+</script>

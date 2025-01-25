@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "About me";
+const identity = {
+    firstName: "Cristian",
+    country: "Colombia",
+    language: "Espanol",
+    hobbies: ["programar", "leer", "escuchar musica"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro"];
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Soy un desarrollador web</h2>
+  <p>Es la primera paginan que creo</p>
+  <p>Aca van algunos datos sobre mi:</p>
+  <ul>
+      <li>Me llamo {identity.firstName}</li>
+      <li>Vivo en {identity.country}</li>
+      {identity.hobbies.length >= 2 &&
+          <li>Dos de mis habilidades son {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+      }
+  </ul>
+  <p>Mis habilidades son:</p>
+  <ul>
+      {skills.map(((skill) => <li class="skill">{skill}</li>))}
+  </ul>
+  {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+  {finished && <p>¡He terminado este tutorial!</p>}
+
+  {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+
+    <script>
+      import "../scripts/menu.js";
+    </script>
+    <!-- Se estan definiendo variables dinamicas en CCS para modificarlas en JS -->
+    <style define:vars={{skillColor,fontWeight,textCase}}>
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+        font-weight: bold;
+      }
+    </style>
+  
+</BaseLayout>
