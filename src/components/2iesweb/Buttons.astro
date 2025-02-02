@@ -1,0 +1,19 @@
+---
+const {bgColor="#4fa669", fgColor="#f4f6f6",text = "Boton"} = Astro.props;
+---
+<button style={`background-color: ${bgColor}; color: ${fgColor};`}>{text}</button>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+<style>
+    button{
+        display:flex;
+        align-items: center;
+        border: none;
+        padding:5px 10px;
+        font-size:24px ;
+        font-weight: bold;
+        font-family: 'Staatliches', cursive;
+        letter-spacing: 1.5px;
+        border-radius: 10px;
+    }
+</style>

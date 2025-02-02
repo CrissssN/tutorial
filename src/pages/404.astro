@@ -1,0 +1,73 @@
+---
+import Buttons from '../components/2iesweb/Buttons.astro';
+import Logo from '../components/vectors/Logo.astro';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} >
+    <title>404</title>
+  </head>
+  <body>
+    <nav>
+        <div class="logo-container">
+            <Logo bgColor="#4fa669" fgColor="#f4f6f6"/>
+        </div>
+        <div class="navlinks-container">
+            <a href="">HOME</a>
+            <a href="">NOSOTROS</a>
+            <a href="">SERVICIOS</a>
+            <a href="">PRODUCTOS</a>
+            <a href="">GALERÍA DE ÉXITOS</a>
+            <a href="">CLIENTES</a>
+        </div>
+        <div class="headerbuttons-container">
+            <Buttons bgColor="#6bdb50" fgColor="#fdfffe" text="CONTACTAR"/>
+            <Buttons bgColor="#075fb4" fgColor="#fdfffe" text="F 16 de JULIO"/>
+        </div>
+    </nav>
+  </body>
+
+</html>
+
+
+
+<style>
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px 50px 30px 50px;
+        gap 50px;
+    }
+    .navlinks-container{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+        font-size:24px ;
+        font-weight: bold;
+        font-family: 'Staatliches', cursive;
+        letter-spacing: 1.5px;
+    }
+    .navlinks-container a{
+        text-decoration: none;
+        color: #4a544c;
+        align-items: center;
+    }
+    .logo-container{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        max-height: 100px;
+        height: 60px;
+    }
+    .headerbuttons-container{
+        display: flex;
+        flex-wrap: nowrap;
+        gap:20px;
+    }
+</style>
+
