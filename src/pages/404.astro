@@ -1,5 +1,6 @@
 ---
 import Buttons from '../components/2iesweb/Buttons.astro';
+import Hamburger from '../components/Hamburger.astro';
 import Logo from '../components/vectors/Logo.astro';
 ---
 
@@ -11,11 +12,12 @@ import Logo from '../components/vectors/Logo.astro';
     <meta name="generator" content={Astro.generator} >
     <title>404</title>
   </head>
-  <body>
+  <header>
     <nav>
         <div class="logo-container">
             <Logo bgColor="#4fa669" fgColor="#f4f6f6"/>
         </div>
+
         <div class="navlinks-container">
             <a href="">HOME</a>
             <a href="">NOSOTROS</a>
@@ -28,8 +30,11 @@ import Logo from '../components/vectors/Logo.astro';
             <Buttons bgColor="#6bdb50" fgColor="#fdfffe" text="CONTACTAR"/>
             <Buttons bgColor="#075fb4" fgColor="#fdfffe" text="F 16 de JULIO"/>
         </div>
+        <div class="hamburger-container">
+            <Hamburger />   
+        </div>
     </nav>
-  </body>
+</header>
 
 </html>
 
@@ -38,36 +43,109 @@ import Logo from '../components/vectors/Logo.astro';
 <style>
     nav{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 30px 50px 30px 50px;
-        gap 50px;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 10vh;
+        justify-content: space-around;
     }
     .navlinks-container{
-        display: flex;
-        justify-content: space-between;
-        gap:20px;
-        font-size:24px ;
-        font-weight: bold;
-        font-family: 'Staatliches', cursive;
-        letter-spacing: 1.5px;
+        display: none;
     }
     .navlinks-container a{
         text-decoration: none;
         color: #4a544c;
-        align-items: center;
+        justify-content: center;
     }
     .logo-container{
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: start;
-        max-height: 100px;
-        height: 60px;
+        height: 100%;
+        width: 10%;
+        min-width: 100px;
+    }
+    
+    .headerbuttons-container{
+        display: none;
+    }
+    .hamburger-container{
+        display: flex;
+        align-items: center;
+    }
+    body{
+        background-color: blue;
+    }
+      /* SMARTPHONES PORTRAIT */
+  @media only screen and (min-width: 300px) {
+    body{
+        background-color: white;
+    }
+    nav{
+        
+    }
+
+  }
+
+  /* SMARTPHONES LANDSCAPE */
+  @media only screen and (min-width: 480px) {
+    body{
+        background-color: white;
+    }
+    nav{
+        padding-top: 20px;
+        gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .navlinks-container{
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
+        font-size:21px ;
+        font-weight: bold;
+        font-family: 'Staatliches', cursive;
+        letter-spacing: 1.5px;
+        flex-wrap: wrap;
+    }
+    .hamburger-container{
+        display: none;
     }
     .headerbuttons-container{
         display: flex;
-        flex-wrap: nowrap;
-        gap:20px;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
+  }
+
+  /* TABLETS PORTRAIT */
+  @media only screen and (min-width: 768px) {
+    body{
+        background-color: white;
+    }
+    .navlinks-container{
+        font-size: 24px;
+    }
+  }
+
+  /* TABLET LANDSCAPE / DESKTOP */
+  @media only screen and (min-width: 1024px) {
+    .headerbuttons-container{
+        gap: 20px;
+        padding-right: 50px;
+    }
+    .navlinks-container{
+        font-size: 28px;
+        font-weight:lighter;
+        padding-right: 80px;
+    }
+    nav{
+        justify-content: space-between;
+    }
+    .logo-container{
+        padding-left: 20px;
+    }
+  }
 </style>
 
